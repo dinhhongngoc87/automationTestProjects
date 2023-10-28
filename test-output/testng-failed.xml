@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="automation.testsuite.Day8.HW.TS_PractiveLocateElement">
+      <class name="automation.testsuite.Day12.HW.Homework">
         <methods>
-          <include name="Demo_Testcase"/>
-          <include name="init"/>
+          <include name="openChrome"/>
+          <include name="handleRadiobox"/>
         </methods>
-      </class> <!-- automation.testsuite.Day8.HW.TS_PractiveLocateElement -->
+      </class> <!-- automation.testsuite.Day12.HW.Homework -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
