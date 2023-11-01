@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="automation.testsuite.Day12.HW.Homework">
+      <class name="automation.testsuite.Day13.HW.LoginTC">
         <methods>
+          <include name="Logout"/>
           <include name="openChrome"/>
-          <include name="handleRadiobox"/>
+          <include name="closeChrome"/>
         </methods>
-      </class> <!-- automation.testsuite.Day12.HW.Homework -->
+      </class> <!-- automation.testsuite.Day13.HW.LoginTC -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
