@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 
 import automation.common.CommonBase;
 import automation.constant.CT_Account;
+import pageLocator.LoginPage;
 
 public class LoginTC extends CommonBase {
 
@@ -22,97 +23,39 @@ public class LoginTC extends CommonBase {
 
 	@Test(priority = 1)
 	public void loginSuccessfully() {
-		WebElement txtEmail = driver.findElement(CT_Account.textBoxEmail);
-		if (txtEmail.isDisplayed()) {
-			txtEmail.clear();
-			txtEmail.sendKeys("admin@demo.com");
-		}
-		pause(3000);
-		WebElement txtPass = driver.findElement(CT_Account.textBoxPassword);
-		if (txtPass.isDisplayed()) {
-			txtPass.clear();
-			txtPass.sendKeys("riseDemo");
-		}
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		WebElement btnSubmit = driver.findElement(CT_Account.btnLogin);
-		if (btnSubmit.isDisplayed()) {
-			btnSubmit.click();
-		}
-		assertTrue(driver.findElement(By.xpath("//ul[@id='sidebar-menu']/descendant::span[text()='Dashboard']"))
-				.isDisplayed());
-
+		LoginPage login = new LoginPage(driver);
+		login.LoginFunction("admin@demo.com", "riseDemo");
+		assertTrue(driver.findElement(CT_Account.dasboardText).isDisplayed());
 	}
 
 	@Test(priority = 2)
 	public void loginFail_IncorrectEmail() {
-		WebElement txtEmail = driver.findElement(CT_Account.textBoxEmail);
-		if (txtEmail.isDisplayed()) {
-			txtEmail.clear();
-			txtEmail.sendKeys("admin@de.com");
-		}
-		pause(3000);
-		WebElement txtPass = driver.findElement(CT_Account.textBoxPassword);
-		if (txtPass.isDisplayed()) {
-			txtPass.clear();
-			txtPass.sendKeys("riseDemo");
-		}
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		WebElement btnSubmit = driver.findElement(CT_Account.btnLogin);
-		if (btnSubmit.isDisplayed()) {
-			btnSubmit.click();
-		}
+		LoginPage login = new LoginPage(driver);
+		login.LoginFunction("admin@dem.com", "riseDemo");	
 		assertTrue(driver.findElement(By.xpath("//div[@role='alert']")).isDisplayed());
 	}
 
 	@Test(priority = 3)
 	public void loginFail_IncorrectPass() {
-		WebElement txtEmail = driver.findElement(CT_Account.textBoxEmail);
-		if (txtEmail.isDisplayed()) {
-			txtEmail.clear();
-			txtEmail.sendKeys("admin@de.com");
-		}
-		pause(3000);
-		WebElement txtPass = driver.findElement(CT_Account.textBoxPassword);
-		if (txtPass.isDisplayed()) {
-			txtPass.clear();
-			txtPass.sendKeys("riseDemo");
-		}
-
-		WebElement btnSubmit = driver.findElement(CT_Account.btnLogin);
-		if (btnSubmit.isDisplayed()) {
-			btnSubmit.click();
-		}
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		LoginPage login = new LoginPage(driver);
+		login.LoginFunction("admin@demo.com", "riseDemoo");	
 		assertTrue(driver.findElement(By.xpath("//div[@role='alert']")).isDisplayed());
+	
 
 	}
 
 	@Test(priority = 4)
 	public void loginFail_IncorrectEmailAndPass() {
-		WebElement txtEmail = driver.findElement(CT_Account.textBoxEmail);
-		if (txtEmail.isDisplayed()) {
-			txtEmail.clear();
-			txtEmail.sendKeys("admin@de.com");
-		}
-		pause(3000);
-		WebElement txtPass = driver.findElement(CT_Account.textBoxPassword);
-		if (txtPass.isDisplayed()) {
-			txtPass.clear();
-			txtPass.sendKeys("riseDem");
-		}
-
-		WebElement btnSubmit = driver.findElement(CT_Account.btnLogin);
-		if (btnSubmit.isDisplayed()) {
-			btnSubmit.click();
-		}
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		LoginPage login = new LoginPage(driver);
+		login.LoginFunction("admin@demo0.com", "riseDemoo");	
 		assertTrue(driver.findElement(By.xpath("//div[@role='alert']")).isDisplayed());
 
 	}
 
 	@Test(priority = 5)
 	public void Logout() {
-		loginSuccessfully();
+		LoginPage login = new LoginPage(driver);
+		login.LoginFunction("admin@demo.com", "riseDemo");
 
 		WebElement userDropdown = driver.findElement(CT_Account.userDropdown);
 		if (userDropdown.isDisplayed()) {

@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-01T00:43:48 ICT" name="Default suite" finished-at="2023-11-01T00:44:10 ICT" duration-ms="22618">
+  <suite started-at="2023-11-04T01:45:41 ICT" name="Default suite" finished-at="2023-11-04T01:47:41 ICT" duration-ms="120348">
     <groups>
     </groups>
-    <test started-at="2023-11-01T00:43:48 ICT" name="Default test" finished-at="2023-11-01T00:44:10 ICT" duration-ms="22618">
-      <class name="automation.testsuite.Day13.HW.LoginTC">
-        <test-method is-config="true" signature="openChrome()[pri:0, instance:automation.testsuite.Day13.HW.LoginTC@97e93f1]" started-at="2023-11-01T00:43:48 ICT" name="openChrome" finished-at="2023-11-01T00:43:53 ICT" duration-ms="5480" status="PASS">
+    <test started-at="2023-11-04T01:45:41 ICT" name="Default test" finished-at="2023-11-04T01:47:41 ICT" duration-ms="120348">
+      <class name="automation.testsuite.Day14.HW.EditUserInfo">
+        <test-method is-config="true" signature="openChrome()[pri:0, instance:automation.testsuite.Day14.HW.EditUserInfo@491b9b8]" started-at="2023-11-04T01:45:41 ICT" name="openChrome" finished-at="2023-11-04T01:46:04 ICT" duration-ms="23373" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openChrome -->
-        <test-method signature="Logout()[pri:5, instance:automation.testsuite.Day13.HW.LoginTC@97e93f1]" started-at="2023-11-01T00:43:53 ICT" name="Logout" finished-at="2023-11-01T00:44:10 ICT" duration-ms="16973" status="PASS">
+        <test-method signature="EditUserInfoSuccessfully()[pri:0, instance:automation.testsuite.Day14.HW.EditUserInfo@491b9b8]" started-at="2023-11-04T01:46:04 ICT" name="EditUserInfoSuccessfully" finished-at="2023-11-04T01:47:41 ICT" duration-ms="96698" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Logout -->
-        <test-method is-config="true" signature="closeChrome()[pri:0, instance:automation.testsuite.Day13.HW.LoginTC@97e93f1]" started-at="2023-11-01T00:44:10 ICT" name="closeChrome" finished-at="2023-11-01T00:44:10 ICT" duration-ms="116" status="PASS">
+        </test-method> <!-- EditUserInfoSuccessfully -->
+        <test-method is-config="true" signature="closeChrome()[pri:0, instance:automation.testsuite.Day14.HW.EditUserInfo@491b9b8]" started-at="2023-11-04T01:47:41 ICT" name="closeChrome" finished-at="2023-11-04T01:47:41 ICT" duration-ms="221" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeChrome -->
-      </class> <!-- automation.testsuite.Day13.HW.LoginTC -->
+      </class> <!-- automation.testsuite.Day14.HW.EditUserInfo -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
