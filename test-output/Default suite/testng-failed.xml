@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="automation.testsuite.Day14.HW.EditUserInfo">
+      <class name="automation.testsuite.Day15.HW.AddFlight">
         <methods>
           <include name="closeChrome"/>
           <include name="openChrome"/>
-          <include name="EditUserInfoSuccessfully"/>
+          <include name="addFlightSuccessfully"/>
         </methods>
-      </class> <!-- automation.testsuite.Day14.HW.EditUserInfo -->
+      </class> <!-- automation.testsuite.Day15.HW.AddFlight -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
