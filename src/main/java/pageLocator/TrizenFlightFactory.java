@@ -18,15 +18,10 @@ import org.openqa.selenium.support.ui.Select;
 
 public class TrizenFlightFactory {
 	WebDriver driver;
-//	JavascriptExecutor excecutor;
-
 	public TrizenFlightFactory(WebDriver driver) {
 		this.driver = driver;
-//		this.excecutor = (JavascriptExecutor) this.driver;
 		PageFactory.initElements(driver, this);
 	}
-
-//	@FindBy(xpath = "(//label[text()='Departing']/following-sibling::div/input[@name='daterange-single' and @readonly])[1]") WebElement departingDate;
 	@FindBy(xpath = "//ul[@id='myTab3']/li")
 	WebElement listFlight;
 	@FindBy(xpath = "//div[@id='myTabContent3']//div[@id='one-way']//label[text()='Departing']/following-sibling::div/input")
@@ -68,11 +63,9 @@ public class TrizenFlightFactory {
 		Select selectCoach = new Select(driver.findElement(By.xpath(
 				"//div[@id='myTabContent3']//div[@id='one-way']//label[text()='Coach']/following-sibling::div//select")));
 		assertFalse(selectCoach.isMultiple());
-		
 		selectCoach.selectByVisibleText(coach.trim());
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		System.out.println(coach.trim()+" and "+selectCoach.getFirstSelectedOption().getText().trim());
-//		assertEquals(coach.trim(), selectCoach.getFirstSelectedOption().getText().trim());
+		assertEquals(coach.trim(), selectCoach.getFirstSelectedOption().getText().trim());
 
 	}
 
