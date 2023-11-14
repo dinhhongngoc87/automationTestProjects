@@ -12,9 +12,10 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import automation.common.CommonBase;
+import automation.common.CommonBase1;
 import automation.constant.CT_Account;
 
-public class Login extends CommonBase {
+public class Login extends CommonBase1 {
 	
 	@BeforeMethod
 	public void openChrome() {
@@ -28,6 +29,7 @@ public class Login extends CommonBase {
 			txtEmail.clear();
 			txtEmail.sendKeys("admin@demo.com");
 		}
+		scrollToElement(By.xpath("//h2[text()='hello']"));
 		pause(3000);
 		WebElement txtPass = driver.findElement(CT_Account.textBoxPassword);
 		if(txtPass.isDisplayed()) {

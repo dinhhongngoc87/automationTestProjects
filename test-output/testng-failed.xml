@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="automation.testsuite.Day16.HW.Day16_HW">
+      <class name="automation.testsuite.Day17.HW.IFramePractice">
         <methods>
-          <include name="closeChrome"/>
-          <include name="changePassword"/>
+          <include name="findIndexIFrame"/>
           <include name="openChrome"/>
+          <include name="closeChrome"/>
         </methods>
-      </class> <!-- automation.testsuite.Day16.HW.Day16_HW -->
+      </class> <!-- automation.testsuite.Day17.HW.IFramePractice -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

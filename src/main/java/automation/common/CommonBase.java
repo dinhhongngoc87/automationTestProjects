@@ -20,7 +20,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
  */
 public class CommonBase {
 	public WebDriver driver;	
-	public int initWaitTime = 10;
+	public int initWaitTime = 50;
 	public WebDriver initChromeDriver(String URL)
 	{
 		ChromeOptions options = new ChromeOptions();
@@ -29,7 +29,7 @@ public class CommonBase {
 		driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
 		driver.get(URL);
-		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 		return driver;
 	}
 
@@ -52,15 +52,15 @@ public class CommonBase {
 			inputTextJavaScriptValue(locator, value);
 		}
 	}
-	public void inputTextJavaScriptValue(WebElement element, String value) {
-		try {
-			((JavascriptExecutor) driver).executeScript("arguments[0].setAttribute('value',arguments[1])", element,value);
-		} catch (StaleElementReferenceException ex) {
-			pause(1000);
-			inputTextJavaScriptValue(element, value);
-		}
-	}
-	
+//	public void inputTextJavaScriptValue(WebElement element, String value) {
+//		try {
+//			((JavascriptExecutor) driver).executeScript("arguments[0].setAttribute('value',arguments[1])", element,value);
+//		} catch (StaleElementReferenceException ex) {
+//			pause(1000);
+//			inputTextJavaScriptValue(element, value);
+//		}
+//	}
+//	
 	public void scrollToElement(By locator) {
 		WebElement element = getElementPresentDOM(locator);
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
